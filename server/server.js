@@ -18,8 +18,8 @@ mongoose.connect(process.env.URLDB, (err, res) => {
     console.log("Base de datos ONLINE");
 
     //creamos los 16 usuarios
-    const creausus = require('./routes/creaUsuarios').creausus;
-    creausus(2000);
+    //     const creausus = require('./routes/creaUsuarios').creausus;
+    //     creausus(16);
 });
 
 app.listen(process.env.PORT, () => {

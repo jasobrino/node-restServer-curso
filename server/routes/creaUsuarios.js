@@ -4,7 +4,7 @@ const Usuario = require('../models/usuario');
 let creaNuevoUsu = async(i) => {
     return new Promise((resolve, reject) => {
         let usuario = new Usuario({
-            nombre: `Usuario numero ${ i }`,
+            nombre: `test ${ i }`,
             email: `test${i}@gmail.com`,
             password: bcrypt.hashSync('123456', 10)
         });
