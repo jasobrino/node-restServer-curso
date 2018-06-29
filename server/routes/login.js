@@ -82,6 +82,7 @@ app.post('/google', async(req, res) => {
     //             err: e
     //         });
     //     });
+    //console.log('token: ', token);
     let googleUser = undefined;
 
     try {
