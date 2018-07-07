@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"cafe.usuarios"},{"v":2,"unique":true,"key":{"email":1},"name":"email_1","ns":"cafe.usuarios","background":true}],"uuid":"bcb2b6b3ca9a44a3853c59baa84a081b"}

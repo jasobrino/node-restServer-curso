@@ -23,7 +23,7 @@ app.get('/productos', verificaToken, (req, res) => {
         .limit(limite)
         .skip(desde)
         .populate('usuario', 'nombre email') //relaciona las colecciones
-        .populate('categoria', 'nombre')
+        .populate('categoria', 'descripcion')
         .exec((err, productos) => {
             if (err) {
                 return res.status(500).json({
@@ -47,7 +47,7 @@ app.get('/productos/:id', verificaToken, (req, res) => {
     let id = req.params.id;
     Producto.findById(id, 'nombre disponible precioUni descripcion')
         .populate('usuario', 'nombre email')
-        .populate('categoria', 'nombre')
+        .populate('categoria', 'descripcion')
         .exec((err, productoDB) => {
             if (err) {
                 return res.status(500).json({
@@ -80,7 +80,8 @@ app.get('/productos/buscar/:termino', verificaToken, (req, res) => {
     let regex = new RegExp(termino, 'i');
 
     Producto.find({ nombre: regex, disponible: true })
-        .populate('categoria', 'nombre')
+        .populate('usuario', 'nombre email')
+        .populate('categoria', 'descripcion')
         .exec((err, productos) => {
             if (err) {
                 return res.status(500).json({
